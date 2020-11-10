@@ -14,7 +14,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-        converttopdf:
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_dir: docs

@@ -14,12 +14,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - uses: baileyjm02/markdown-to-pdf
+      - uses: baileyjm02/markdown-to-pdf@v1.0.1
         with:
           input_dir: docs
           output_dir: pdfs
           build_html: true
-      - uses: actions/upload-artifact
+      - uses: actions/upload-artifact@v2
         with:
           name: docs
           path: pdf

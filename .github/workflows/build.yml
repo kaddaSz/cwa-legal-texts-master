@@ -22,6 +22,6 @@ jobs:
             DEST_REPO_NAME: 'cwa-legal-texts-consumer'
             USER_EMAIL: 'katharina.seiz@sap.com'
             PUSH_TO_BRANCH: 'legal/html-files'
-            PR_TO_BRANCH: 'master'
+            PR_TO_BRANCH: 'main'
             SRC_DIR: 'pdfs/*'
             PR_MESSAGE: 'Legal Text updates'

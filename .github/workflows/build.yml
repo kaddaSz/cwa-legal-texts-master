@@ -4,14 +4,9 @@ on:
   push:
     branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
       - uses: baileyjm02/markdown-to-pdf@v1.0.1
@@ -19,7 +14,14 @@ jobs:
           input_dir: docs
           output_dir: pdfs
           build_html: true
-      - uses: actions/upload-artifact@v2
-        with:
-          name: docs
-          path: pdfs
+      - name: Push to legal text consumer
+        uses: sepulsa/push_then_pr@master
+        env:
+            API_TOKEN_GITHUB: ${{ secrets.KADDASZ_ACCESS_TOKEN }}
+            DEST_GITHUB_USERNAME: 'kaddaSz'
+            DEST_REPO_NAME: 'cwa-legal-texts-consumer'
+            USER_EMAIL: 'katharina.seiz@sap.com'
+            PUSH_TO_BRANCH: 'legal/html-files'
+            PR_TO_BRANCH: 'master'
+            SRC_DIR: 'pdfs/*'
+            PR_MESSAGE: 'Legal Text updates'

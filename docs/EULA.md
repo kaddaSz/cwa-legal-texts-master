@@ -1,4 +1,4 @@
-##  Corona-Warn-App
+##  Corona-Warn-App TEST
 # Nutzungsbedingungen
 ## Inhalt
 1. Welche Funktionen hat die App?

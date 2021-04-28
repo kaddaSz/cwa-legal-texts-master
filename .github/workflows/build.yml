@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ZacJW/markdown-html-action@1.1.1
         with:
-          input_files: '["docs/EULA.md"]'
+          input_files: '[["docs/EULA.md"]]'
           output_files: '["output/EULA.html"]'          
       - name: Push to legal text consumer
         uses: sepulsa/push_then_pr@master

@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ZacJW/markdown-html-action@1.1.0
+      - uses: ZacJW/markdown-html-action@1.1.1
         with:
           input_files: '["docs/EULA.md"]'
           output_files: '["output/EULA.html"]'          
